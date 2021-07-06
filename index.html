@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>Guess my number</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> 
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/870cafe74a.js" crossorigin="anonymous"></script>
+    
+</head>
+  <body>
+    <div class="firstDiv">
+      <p class="right-top">[Between 1 and 20]</p>
+      <h1>
+        How lucky are you?<br />
+        Guess my number!
+      <div class="number">?</div>
+    </div>
+    <div class="horizontal_dotted_line"></div>
+    <div class="row">
+      <div class="column">
+        <input type="number" class="guess" />
+        <br>
+        <button class="btn btn-secondary btn-lg checkButton">Check</button>
+      </div>
+
+      <div class="column right">
+        <p class="message"><i class="fas fa-play"></i>Start guessing...</p>
+        <p><i class="far fa-star"></i>Score: <span class="score">20</span></p>
+        <p><i class="fas fa-star"></i>Highscore: <span  class="highscore">0</span></p>
+      </div>
+    </div class="bottom">
+    <div class="bottomButton">
+      <button class="btn btn-secondary btn-lg tryAgain">Try again!</button>
+      
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
