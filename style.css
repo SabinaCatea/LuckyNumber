@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  /* text-align: center; */
+}
+body {
+  padding: 40px;
+  /* background-color: aqua; */
+}
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+.horizontal-line {
+  height: 5px;
+  background-color: black;
+}
+.midle-section {
+  text-align: center;
+}
+.guessed-number {
+  top: 0.5rem;
+  z-index: 10;
+}
+.wrapper:before,
+.wrapper:after {
+  content: " ";
+  /* width: 200px; */
+  width: 46vw;
+  height: 2px;
+  background-color: green;
+  display: inline-block;
+}
+.number-check {
+  display: flex;
+  justify-content: center;
+  padding: 50px 100px;
+}
+
+.number-check .left-section {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
