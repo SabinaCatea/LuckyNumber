@@ -8,6 +8,7 @@ const checkButton = document.querySelector(".check-button");
 const message = document.querySelector(".message");
 const score = document.querySelector(".score");
 const highScore = document.querySelector(".high-score");
+const again = document.querySelector(".again");
 console.log(
   guessedNumber,
   chosenNumber,
@@ -16,21 +17,57 @@ console.log(
   score,
   highScore
 );
+guessedNumber.textContent = "?";
+chosenNumber.textContent = " ";
 let highScoreNumber = 0;
-let scoreNumber = 0;
-checkButton.addEventListener("click", function () {
-  const randomNumber = Math.floor(Math.random() * 20);
+let scoreNumber = 20;
 
-  let chosenNumberN = chosenNumber.value;
-  guessedNumber.textContent = chosenNumberN;
-  console.log(randomNumber);
-  if (randomNumber === Number(chosenNumberN)) {
-    console.log("you guessed my number");
-    message.textContent = "Correct Number!";
-    scoreNumber = scoreNumber + 1;
-    console.log(scoreNumber);
-    score.textContent = `Score: ${scoreNumber}`;
-  } else {
-    console.log("try again");
+let randomNumber = Math.floor(Math.random() * 20 + 1);
+
+console.log(randomNumber);
+
+checkButton.addEventListener("click", function () {
+  let chosenNumberN = Number(chosenNumber.value);
+
+  //console.log(chosenNumberN);
+  if (!chosenNumberN) {
+    message.textContent = "No number!";
   }
+  //console.log(randomNumber);
+
+  if (randomNumber === chosenNumberN) {
+    guessedNumber.textContent = randomNumber;
+    if (scoreNumber > 0) {
+      message.textContent = "Correct Number!";
+      //  console.log(scoreNumber);
+      score.textContent = `Score: ${scoreNumber}`;
+      console.log(highScoreNumber, scoreNumber);
+
+      if (highScoreNumber < scoreNumber) {
+        highScoreNumber = scoreNumber;
+        highScore.textContent = `HighScore: ${highScoreNumber}`;
+        console.log(highScoreNumber, scoreNumber);
+      } else {
+        highScore.textContent = `HighScore: ${scoreNumber}`;
+      }
+    }
+  } else {
+    if (scoreNumber > 0) {
+      message.textContent = "Try again!";
+      scoreNumber--;
+      score.textContent = `Score: ${scoreNumber}`;
+    }
+  }
+
+  //console.log(scoreNumber, highScoreNumber);
+});
+
+again.addEventListener("click", function () {
+  guessedNumber.textContent = "?";
+  chosenNumber.value = "";
+  message.textContent = "Start guessing...";
+  score.textContent = "Score: 20";
+  scoreNumber = 20;
+  randomNumber = Math.floor(Math.random() * 20 + 1);
+  console.log(randomNumber);
 });
