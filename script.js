@@ -20,6 +20,7 @@ console.log(
 guessedNumber.textContent = "?";
 chosenNumber.textContent = " ";
 let highScoreNumber = 0;
+
 let scoreNumber = 20;
 
 let randomNumber = Math.floor(Math.random() * 20 + 1);
@@ -41,14 +42,12 @@ checkButton.addEventListener("click", function () {
       message.textContent = "Correct Number!";
       //  console.log(scoreNumber);
       score.textContent = `Score: ${scoreNumber}`;
-      console.log(highScoreNumber, scoreNumber);
+      //console.log(highScoreNumber, scoreNumber);
 
-      if (highScoreNumber < scoreNumber) {
+      if (scoreNumber > highScoreNumber) {
         highScoreNumber = scoreNumber;
         highScore.textContent = `HighScore: ${highScoreNumber}`;
-        console.log(highScoreNumber, scoreNumber);
-      } else {
-        highScore.textContent = `HighScore: ${scoreNumber}`;
+        //console.log(highScoreNumber, scoreNumber);
       }
     }
   } else {
@@ -69,5 +68,5 @@ again.addEventListener("click", function () {
   score.textContent = "Score: 20";
   scoreNumber = 20;
   randomNumber = Math.floor(Math.random() * 20 + 1);
-  console.log(randomNumber);
+  //console.log(randomNumber);
 });
